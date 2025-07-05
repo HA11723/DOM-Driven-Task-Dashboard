@@ -1,0 +1,114 @@
+:root {
+    --bg: #f0f2f5;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --accent: #4a90e2;
+    --accent-light: #7bbfff;
+    --transition: 0.3s ease;
+  }
+  [data-theme="dark"] {
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #e0e0e0;
+    --accent: #bb86fc;
+    --accent-light: #d0aefc;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background var(--transition), color var(--transition);
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  #theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform var(--transition);
+  }
+  #theme-toggle:hover {
+    transform: rotate(20deg);
+  }
+  main {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  #controls button,
+  #controls select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+  }
+  #controls button:hover,
+  #controls select:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+  }
+  #task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .task-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: background var(--transition);
+  }
+  .task-card.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+  }
+  .task-complete {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+  .task-content {
+    outline: none;
+  }
+  .task-date {
+    font-size: 0.85rem;
+    color: var(--accent-light);
+  }
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ff6b6b;
+    transition: transform var(--transition);
+  }
+  .delete-btn:hover {
+    transform: scale(1.2);
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Tasks</h1>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </header>
+    <main>
+      <section id="controls">
+        <button id="new-task-btn">+ New Task</button>
+        <select id="filter-status">
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+        <select id="sort-order">
+          <option value="date-asc">Date ↑</option>
+          <option value="date-desc">Date ↓</option>
+        </select>
+      </section>
+
+      <section id="task-list" aria-live="polite">
+        <!-- Task cards inserted here -->
+      </section>
+    </main>
+
+    <!-- Templates -->
+    <template id="task-template">
+      <article class="task-card" draggable="true">
+        <input type="checkbox" class="task-complete" />
+        <div class="task-content" contenteditable="true"></div>
+        <time class="task-date"></time>
+        <button class="delete-btn" aria-label="Delete task">✕</button>
+      </article>
+    </template>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
